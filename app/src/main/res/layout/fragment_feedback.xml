@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".Feedback">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"/>
+
+
+        <TextView
+            android:id="@+id/feedbackRatingTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:width="150dp"
+            android:text="How do you rate Crack Down ?"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/feedbackRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:inputType="number"
+            android:ems="3"
+            android:textColor="@color/white"
+            android:layout_below="@id/heading"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@id/feedbackRatingTxt"
+            android:layout_marginLeft="30dp"
+            />
+
+
+        <TextView
+            android:id="@+id/feedbackMostLikedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Which part do you like the most ?"
+            android:textColor="@color/white"
+            android:layout_below="@id/feedbackRatingTxt"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:width="150dp"
+            />
+
+        <EditText
+            android:id="@+id/feedbackMostLiked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="your answer"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/feedbackRatingTxt"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/feedbackRatingTxt"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <TextView
+            android:id="@+id/feedbackLeastLikedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Which part you don't like ?"
+            android:textColor="@color/white"
+            android:layout_below="@id/feedbackMostLikedTxt"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:width="150dp"
+            />
+
+        <EditText
+            android:id="@+id/feedbackLeastLiked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="your answer"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/feedbackMostLikedTxt"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/feedbackRatingTxt"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/feedbackCommentTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Any suggestion or comment ?"
+            android:textColor="@color/white"
+            android:layout_below="@id/feedbackLeastLiked"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:width="150dp"
+            />
+
+        <EditText
+            android:id="@+id/feedbackComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="your answer"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_below="@id/feedbackLeastLiked"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/feedbackRatingTxt"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <Button
+            android:id="@+id/feedbackSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_below="@id/feedbackComment"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            />
+
+
+    </RelativeLayout>
+</FrameLayout>

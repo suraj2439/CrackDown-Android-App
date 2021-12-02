@@ -4,40 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/totImagesTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total answers:   "
+        android:textColor="@color/white"
+        android:layout_below="@id/adBanner"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/totImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:inputType="number"
+        android:ems="5"
+        android:textColor="@color/white"
+        android:layout_below="@id/adBanner"
+        android:layout_toRightOf="@id/totImagesTxt"
+        />
+
+    <Switch
+        android:id="@+id/wa_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adBanner"
+        android:layout_alignParentRight="true"
+        android:text="Whatsapp"
+        android:textColor="@color/white"/>
 
     <ImageView
         android:id="@+id/captured_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/take_pic"
-        android:layout_below="@id/show_txt"
+        android:layout_above="@id/buttons"
+        android:layout_below="@id/wa_switch"
         />
 
-    <TextView
-        android:id="@+id/show_txt"
+    <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/sky">
+
+        <ImageButton
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_prev"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"/>
+
+        <RelativeLayout
+            android:id="@+id/take_pic_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/take_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_share"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upload_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_file_upload"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/local_search_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/local_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_image_search"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_img_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/search_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_camera"
+                android:layout_gravity="center_vertical"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_next"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adBanner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        />
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3568641157298310/6160452508">
+    </com.google.android.gms.ads.AdView>
 
-    <Button
-        android:id="@+id/take_pic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Capture Image"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        />
 
-    <Button
-        android:id="@+id/search_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search Image"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        />
+
 
 </RelativeLayout>

@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".PrimaryTask">
 
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bannerAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3568641157298310/7622789555">
+    </com.google.android.gms.ads.AdView>
+
     <FrameLayout
         android:id="@+id/group_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@id/bannerAd"
+        >
 
     </FrameLayout>
 

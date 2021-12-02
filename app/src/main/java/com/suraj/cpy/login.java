@@ -1,18 +1,24 @@
 package com.suraj.cpy;
-
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +35,9 @@ public class login extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private FirebaseAuth auth;
+    EditText email, pswd;
 
     public login() {
         // Required empty public constructor
@@ -67,25 +76,31 @@ public class login extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
+        EditText saved_email = (EditText) view.findViewById(R.id.email);
+        EditText saved_pswd = (EditText) view.findViewById(R.id.pswd);
+
+        SharedPreferences sp = ((PrimaryTask)getActivity()).login_details;
+        String userEmail = sp.getString("UserName", null);
+        String password = sp.getString("Pswd", null);
+
+        if(userEmail != null && password!= null) {
+            saved_email.setText(userEmail);
+            saved_pswd.setText(password);
+        }
+
+        auth = FirebaseAuth.getInstance();
         Button login_btn = view.findViewById(R.id.login_btn);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText name  = view.findViewById(R.id.email);
-                String userName = name.getText().toString();
-                if(userName == "") {
-                    try {
-                        Toast.makeText(getActivity(), "Enter User name in Email field", Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                if(! ((PrimaryTask)getActivity()).is_right_version) {
+                    Toast.makeText(getContext(), "You are not allowed to use this version of app, please update your app",
+                            Toast.LENGTH_LONG).show();
+                    return;
                 }
-                else {
-                    ((PrimaryTask)getActivity()).senderName = userName;
-                    //TODO authenticate user
-                    FragmentManager fragmentManager = getFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.group_container, new groups()).commit();
-                }
+                email  = view.findViewById(R.id.email);
+                pswd = view.findViewById(R.id.pswd);
+                signin_user();
             }
         });
 
@@ -93,14 +108,62 @@ public class login extends Fragment {
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO register user
-
+                if(! ((PrimaryTask)getActivity()).is_right_version) {
+                    Toast.makeText(getContext(), "You are not allowed to use this version of app, please update your app",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.group_container, new signup()).commit();
+                fragmentManager.beginTransaction().replace(R.id.group_container, new signup()).addToBackStack(null).commit();
             }
         });
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private void signin_user() {
+        String userEmail = email.getText().toString();
+        String userPswd = pswd.getText().toString();
+
+        if(userEmail.isEmpty()) {
+            email.setError("Required");
+            email.requestFocus();
+            return;
+        }
+        if(userPswd.isEmpty()) {
+            pswd.setError("Required");
+            pswd.requestFocus();
+            return;
+        }
+
+        ((PrimaryTask)getActivity()).progressBar.startProgressBar();
+        Toast.makeText(getContext(), "Please wait...", Toast.LENGTH_LONG).show();
+        auth.signInWithEmailAndPassword(userEmail, userPswd)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        ((PrimaryTask)getActivity()).progressBar.dismisprogressBar();
+                        if(task.isSuccessful()) {
+                            ((PrimaryTask)getActivity()).editor.putString("UserName", userEmail);
+                            ((PrimaryTask)getActivity()).editor.putString("Pswd", userPswd);
+                            ((PrimaryTask)getActivity()).editor.commit();
+
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            FirebaseUser curr_user = auth.getCurrentUser();
+                            ((PrimaryTask)getActivity()).fuser = curr_user;
+                            Toast.makeText(getContext(), "You have successfully logged in", Toast.LENGTH_LONG).show();
+
+                            FragmentManager fragmentManager = getFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.group_container, new groups()).addToBackStack(null).commit();
+                        }
+                        else {
+                            Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            email.setError("Invalid login id or password");
+                            email.requestFocus();
+                            return;
+                        }
+                    }
+                });
     }
 }

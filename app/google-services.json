@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "381824402810",
-    "project_id": "cpy-paste",
-    "storage_bucket": "cpy-paste.appspot.com"
+    "project_number": "1071167358190",
+    "project_id": "crack-down",
+    "storage_bucket": "crack-down.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:381824402810:android:1fdf40d653c0a73c4482c3",
+        "mobilesdk_app_id": "1:1071167358190:android:94a6d4787bacf28ffb5fff",
         "android_client_info": {
           "package_name": "com.suraj.cpy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "381824402810-s3q4oq8vjdcjpurfoapsqq74m7k2kjn0.apps.googleusercontent.com",
+          "client_id": "1071167358190-motilofc75mar799v8993g8d5f2knhgq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCiQMFDc9FQ9zIqllcy1HZtbfH5v4eFYzs"
+          "current_key": "AIzaSyBgmQzIcfQe0pod_g0DIMgCJfcTSwrTgN0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "381824402810-s3q4oq8vjdcjpurfoapsqq74m7k2kjn0.apps.googleusercontent.com",
+              "client_id": "1071167358190-motilofc75mar799v8993g8d5f2knhgq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

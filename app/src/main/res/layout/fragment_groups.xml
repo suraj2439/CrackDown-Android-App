@@ -3,110 +3,180 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".groups">
 
+
     <TextView
-        android:id="@+id/welcome_text"
+        android:id="@+id/manual_path"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="Welcome"
-        android:textSize="40dp"
-        android:layout_marginTop="150dp"
+        android:textSize="50dp"
         android:layout_centerHorizontal="true"
-        />
+        android:textColor="@color/white" />
 
 
-    <LinearLayout
-        android:id="@+id/grp_btns"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/welcome_text"
-        android:layout_marginTop="100dp">
+        android:layout_height="match_parent"
+        android:layout_below="@id/manual_path"
+        >
 
-        <Button
-            android:id="@+id/join_grp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Join Group"
-            android:layout_weight="1"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="10dp"
-            />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/create_grp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create Group"
-            android:layout_weight="1"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="10dp"
-            />
+            <LinearLayout
+                android:id="@+id/grp_btns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/manual_path"
+                android:layout_marginTop="50dp">
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/join_grp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Join Group"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <Button
+                    android:id="@+id/create_grp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Group"
+                    android:layout_weight="1"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/wa_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use only Whatsapp mode"
+                android:layout_weight="1"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/grp_btns"
+                />
+
+            <LinearLayout
+                android:id="@+id/wa_feature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/wa_mode"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Do you want to enable Whatsapp feature?"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    />
+
+                <Switch
+                    android:id="@+id/wa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="no/yes"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/grp_btns"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp"
-        android:id="@+id/accept_id">
+            <LinearLayout
+                android:id="@+id/accept_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/wa_feature"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/wa_time_txt"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Time(in min): "
+                    />
+
+                <EditText
+                    android:id="@+id/wa_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:ems="6"
+                    android:inputType="number"
+                    android:enabled="false"
+                    android:text="0"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"/>
+
+            </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/grp_id_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Group Id"
-            android:layout_marginLeft="60dp"
-            android:visibility="invisible"
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/accept_time"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                android:id="@+id/accept_id">
 
-        <EditText
-            android:id="@+id/grp_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Your Id"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="30dp"
-            android:visibility="invisible"
-            />
-    </LinearLayout>
 
-    <Button
-        android:id="@+id/proceed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Proceed"
-        android:layout_below="@id/accept_id"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:visibility="invisible"
-        />
+                <TextView
+                    android:id="@+id/grp_id_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Group Id"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="60dp"
+                    android:visibility="invisible"
+                    />
 
-    <TextView
-        android:id="@+id/wa_time_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Time(in min)"
-        android:layout_marginTop="40dp"
-        />
+                <EditText
+                    android:id="@+id/grp_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="Your Id"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="30dp"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/wa_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_marginTop="30dp"
-        android:layout_toRightOf="@id/wa_time_txt"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"/>
+            <Button
+                android:id="@+id/proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proceed"
+                android:backgroundTint="@color/sky"
+                android:textColor="@color/white"
+                android:layout_below="@id/accept_id"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
 
+    </ScrollView>
 
 </RelativeLayout>
