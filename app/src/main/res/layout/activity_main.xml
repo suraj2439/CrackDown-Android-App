@@ -11,7 +11,7 @@
         android:id="@+id/totImagesTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total answers:   "
+        android:text="Total images collected:   "
         android:textColor="@color/white"
         android:layout_below="@id/adBanner"
         android:layout_marginLeft="20dp"/>
@@ -35,7 +35,7 @@
         android:layout_below="@id/adBanner"
         android:layout_alignParentRight="true"
         android:text="Whatsapp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/captured_img"
@@ -141,16 +141,14 @@
 
     </LinearLayout>
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adBanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3568641157298310/6160452508">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-2142739626174652/2282871262"></com.google.android.gms.ads.AdView>
 
 
 

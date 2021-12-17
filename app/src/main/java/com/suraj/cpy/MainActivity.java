@@ -176,7 +176,10 @@ public class MainActivity extends AppCompatActivity {
         load_interstitialAd();
 
         handle_permissions();
-        add_user_in_group(groupId);
+
+        if(! groupId.equals(TMP_GRP_ID)) {
+            add_user_in_group(groupId);
+        }
 
         if(is_wa_enabled)
             wa_switch.setChecked(true);
@@ -192,8 +195,8 @@ public class MainActivity extends AppCompatActivity {
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(groupId == TMP_GRP_ID) {
-                    Toast.makeText(getApplicationContext(), "Oops! you are in whatsapp mode.", Toast.LENGTH_LONG).show();
+                if(groupId.equals(TMP_GRP_ID)) {
+                    Toast.makeText(getApplicationContext(), "Oops! you are in whatsapp only mode.", Toast.LENGTH_LONG).show();
                     return;
                 }
                 handle_permissions();
@@ -214,8 +217,8 @@ public class MainActivity extends AppCompatActivity {
         take_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(groupId == TMP_GRP_ID) {
-                    Toast.makeText(getApplicationContext(), "Oops! you are in whatsapp mode.", Toast.LENGTH_LONG).show();
+                if(groupId.equals(TMP_GRP_ID)) {
+                    Toast.makeText(getApplicationContext(), "Oops! you are in whatsapp only mode.", Toast.LENGTH_LONG).show();
                     return;
                 }
                 take_photo(UPLOAD_ON_DB);
@@ -605,7 +608,11 @@ public class MainActivity extends AppCompatActivity {
 
         int itemId = item.getItemId();
         if(itemId == R.id.group_info) {
-            menuActivity.putExtra("action", 0);
+            if(groupId.equals(TMP_GRP_ID)) {
+                Toast.makeText(getApplicationContext(), "Oops! you are in whatsapp Only mode.", Toast.LENGTH_LONG).show();
+                return true;
+            }
+            else menuActivity.putExtra("action", 0);
         }
         else if(itemId == R.id.feedback)
             menuActivity.putExtra("action", 2);
@@ -678,7 +685,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void load_interstitialAd() {
         AdRequest interstitialReq = new AdRequest.Builder().build();
-        InterstitialAd.load(this,"ca-app-pub-3568641157298310/9482666133", interstitialReq,
+        InterstitialAd.load(this,"ca-app-pub-2142739626174652/5044959491", interstitialReq,
                 new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

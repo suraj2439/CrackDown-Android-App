@@ -6,92 +6,99 @@
     tools:context=".GroupInfo"
     android:background="@color/gray">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Group Information"
-            android:textSize="30dp"
-            android:textColor="@color/white"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
-            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/infoGrpIdTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Group Id: "
-            android:textColor="@color/white"
-            android:layout_below="@id/heading"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="40dp"
-            />
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Group Information"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                />
 
-        <TextView
-            android:id="@+id/infoGrpId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00000000000"
-            android:inputType="number"
-            android:textColor="@color/white"
-            android:layout_below="@id/heading"
-            android:layout_marginTop="70dp"
-            android:layout_toRightOf="@id/infoGrpIdTxt"
-            android:layout_marginLeft="50dp"
-            />
+            <TextView
+                android:id="@+id/infoGrpIdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Group Id: "
+                android:textColor="@color/white"
+                android:layout_below="@id/heading"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="40dp"
+                />
 
-        <TextView
-            android:id="@+id/infoAdminTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Admin: "
-            android:textColor="@color/white"
-            android:layout_below="@id/infoGrpIdTxt"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="40dp"
-            />
+            <TextView
+                android:id="@+id/infoGrpId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00000000000"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:layout_below="@id/heading"
+                android:layout_marginTop="70dp"
+                android:layout_toRightOf="@id/infoGrpIdTxt"
+                android:layout_marginLeft="50dp"
+                />
 
-        <TextView
-            android:id="@+id/infoAdmin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="           "
-            android:textColor="@color/white"
-            android:layout_below="@id/infoGrpId"
-            android:layout_marginTop="40dp"
-            android:layout_toRightOf="@id/infoGrpIdTxt"
-            android:layout_marginLeft="50dp"
-            />
+            <TextView
+                android:id="@+id/infoAdminTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin: "
+                android:textColor="@color/white"
+                android:layout_below="@id/infoGrpIdTxt"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                />
+
+            <TextView
+                android:id="@+id/infoAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="           "
+                android:textColor="@color/white"
+                android:layout_below="@id/infoGrpId"
+                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@id/infoGrpIdTxt"
+                android:layout_marginLeft="50dp"
+                />
 
 
-        <TextView
-            android:id="@+id/infoMembersTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Members: "
-            android:textColor="@color/white"
-            android:layout_below="@id/infoAdmin"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="40dp"
-            />
+            <TextView
+                android:id="@+id/infoMembersTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Members: "
+                android:textColor="@color/white"
+                android:layout_below="@id/infoAdmin"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                />
 
-        <LinearLayout
-            android:id="@+id/infoMembers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/infoAdmin"
-            android:layout_toRightOf="@id/infoGrpIdTxt"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="40dp"
-            >
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/infoMembers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/infoAdmin"
+                android:layout_toRightOf="@id/infoGrpIdTxt"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="40dp"
+                >
+            </LinearLayout>
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
 
 </FrameLayout>

@@ -86,7 +86,7 @@ public class groups extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_groups, container, false);
 
-        EditText manual_path = (EditText)view.findViewById(R.id.manual_path);
+        EditText manual_path = (EditText) view.findViewById(R.id.manual_path);
         manual_path.setText(Environment.getExternalStorageDirectory().getAbsolutePath() + "/WhatsApp/Media/WhatsApp Images");
 
         ((PrimaryTask)getActivity()).progressBar.startProgressBar();
@@ -303,6 +303,15 @@ public class groups extends Fragment {
                     mainActivity.putExtra("wa_path", manual_path.getText().toString());
                     startActivity(mainActivity);
                 }
+                else if(click_event == WA_MODE_EVENT) {
+                    ((PrimaryTask)getActivity()).progressBar.dismisprogressBar();
+                    mainActivity.putExtra("wa_feature", is_wa_enabled);
+                    mainActivity.putExtra("senderName", "Undefined");
+                    mainActivity.putExtra("userId", ((PrimaryTask) getActivity()).fuser);
+                    mainActivity.putExtra("groupId", TMP_GRP_ID);
+                    mainActivity.putExtra("wa_path", manual_path.getText().toString());
+                    startActivity(mainActivity);
+                }
             }
         });
 
@@ -329,14 +338,6 @@ public class groups extends Fragment {
                 }
 
                 click_event = WA_MODE_EVENT;
-                Intent mainActivity = new Intent(getActivity(), MainActivity.class);
-                ((PrimaryTask)getActivity()).progressBar.dismisprogressBar();
-                mainActivity.putExtra("wa_feature", is_wa_enabled);
-                mainActivity.putExtra("senderName", "Undefined");
-                mainActivity.putExtra("userId", ((PrimaryTask) getActivity()).fuser);
-                mainActivity.putExtra("groupId", TMP_GRP_ID);
-                mainActivity.putExtra("wa_path", manual_path.getText().toString());
-                startActivity(mainActivity);
             }
         });
 

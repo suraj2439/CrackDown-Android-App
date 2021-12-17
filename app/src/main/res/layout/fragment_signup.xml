@@ -6,122 +6,131 @@
     android:background="@color/gray"
     tools:context=".signup">
 
-    <TextView
-        android:id="@+id/signup_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textSize="40dp"
-        android:textColor="@color/white"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
-        android:layout_centerInParent="true"
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/signup_name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textColor="@color/white"
-        android:layout_below="@id/signup_text"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="30dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/signup_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signup_text"
-        android:layout_toRightOf="@+id/signup_email_text"
-        android:textColor="@color/white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+            <TextView
+                android:id="@+id/signup_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="80dp"
+                android:text="@string/sign_up"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
 
-    <TextView
-        android:id="@+id/signup_email_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email Address"
-        android:textColor="@color/white"
-        android:layout_below="@id/signup_name"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
+            <TextView
+                android:id="@+id/signup_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/white"
+                android:layout_below="@id/signup_text"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="30dp"/>
 
-    <EditText
-        android:id="@+id/signup_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signup_name"
-        android:textColor="@color/white"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/signup_email_text"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/signup_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/signup_text"
+                android:layout_toEndOf="@+id/signup_email_text"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/signup_pswd_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:textColor="@color/white"
-        android:layout_below="@id/signup_email"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
+            <TextView
+                android:id="@+id/signup_email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_address"
+                android:textColor="@color/white"
+                android:layout_below="@id/signup_name"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"/>
 
-    <EditText
-        android:id="@+id/signup_pswd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_below="@id/signup_email"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/signup_email_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
-        />
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/signup_name"
+                android:textColor="@color/white"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/signup_email_text"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/signup_reconfirm_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirm"
-        android:textColor="@color/white"
-        android:layout_below="@id/signup_pswd"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
+            <TextView
+                android:id="@+id/signup_pswd_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textColor="@color/white"
+                android:layout_below="@id/signup_email"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"/>
 
-    <EditText
-        android:id="@+id/signup_reconfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_below="@id/signup_pswd"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/signup_email_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
-        />
+            <EditText
+                android:id="@+id/signup_pswd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:layout_below="@id/signup_email"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/signup_email_text"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:importantForAutofill="no" />
 
-    <Button
-        android:id="@+id/register_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/sky"
-        android:layout_below="@id/signup_reconfirm"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        />
+            <TextView
+                android:id="@+id/signup_reconfirm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                android:layout_below="@id/signup_pswd"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"/>
 
+            <EditText
+                android:id="@+id/signup_reconfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:layout_below="@id/signup_pswd"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/signup_email_text"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:importantForAutofill="no" />
+
+                <Button
+                    android:id="@+id/register_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/signup_reconfirm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/sky"
+                    android:text="@string/register"
+                    android:textColor="@color/white" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

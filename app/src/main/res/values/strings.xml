@@ -2,4 +2,11 @@
     <string name="app_name">Crack Down</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm">Confirm</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="name">Name</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="welcome">Welcome</string>
 </resources>

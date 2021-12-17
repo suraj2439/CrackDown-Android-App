@@ -145,7 +145,7 @@ public class PrimaryTask extends AppCompatActivity {
 
     private void load_interstitialAd() {
         AdRequest interstitialReq = new AdRequest.Builder().build();
-        InterstitialAd.load(this,"ca-app-pub-3568641157298310/9482666133", interstitialReq,
+        InterstitialAd.load(this,"ca-app-pub-2142739626174652/5044959491", interstitialReq,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

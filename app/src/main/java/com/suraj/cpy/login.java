@@ -89,6 +89,12 @@ public class login extends Fragment {
         }
 
         auth = FirebaseAuth.getInstance();
+
+        // Try to login using previous credentials
+        email  = view.findViewById(R.id.email);
+        pswd = view.findViewById(R.id.pswd);
+        signin_user();
+
         Button login_btn = view.findViewById(R.id.login_btn);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override

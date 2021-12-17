@@ -6,56 +6,76 @@
     android:background="@color/gray"
     tools:context=".groups">
 
-
-    <TextView
-        android:id="@+id/manual_path"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Welcome"
-        android:textSize="50dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white" />
-
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/manual_path"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/welcome"
+                android:textSize="40sp"
+                android:layout_gravity="center"
+                android:textColor="@color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/manual_path_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="Manual Path: "
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/manual_path"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/manual_path_text"
+                    android:text="manual path"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+
             <LinearLayout
                 android:id="@+id/grp_btns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_below="@+id/manual_path"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/join_grp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Join Group"
-                    android:layout_weight="1"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="10dp"
-                    />
+                    android:layout_weight="1"
+                    android:text="Join Group" />
 
                 <Button
                     android:id="@+id/create_grp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Create Group"
-                    android:layout_weight="1"
-                    android:layout_marginRight="30dp"
                     android:layout_marginLeft="10dp"
-                    />
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1"
+                    android:text="Create Group" />
 
             </LinearLayout>
 
@@ -63,37 +83,46 @@
                 android:id="@+id/wa_mode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Use only Whatsapp mode"
-                android:layout_weight="1"
-                android:layout_marginRight="30dp"
+                android:layout_below="@+id/grp_btns"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/grp_btns"
-                />
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="Use only Whatsapp mode" />
 
             <LinearLayout
                 android:id="@+id/wa_feature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_below="@+id/wa_mode"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:text="Do you want to enable Whatsapp feature?"
-                    android:textColor="@color/white"
-                    android:layout_weight="1"
-                    />
+                    android:layout_weight="0.8"
+                    android:text="Do you want to collect images from whatsapp?"
+                    android:textColor="@color/white" />
 
                 <Switch
                     android:id="@+id/wa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="no/yes"
-                    android:textColor="@color/white"/>
+                    android:switchPadding="16dp"
+                    android:layoutDirection="rtl"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.2"
+                    android:layout_marginLeft="10dp"
+                    android:text="Yes/No" />
+<!--                <Switch-->
+<!--                    android:id="@+id/wa"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="no/yes"-->
+<!--                    android:layout_weight="0.2"-->
+<!--                    android:textColor="@color/white" />-->
             </LinearLayout>
 
 
@@ -101,80 +130,87 @@
                 android:id="@+id/accept_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_below="@id/wa_feature"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/wa_time_txt"
-                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Last Time(in min): "
-                    />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/wa_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:ems="6"
-                    android:inputType="number"
-                    android:enabled="false"
-                    android:text="0"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"/>
+                    android:layout_marginRight="30dp"
+                    android:ems="6"
+                    android:enabled="false"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
 
             <LinearLayout
+                android:id="@+id/accept_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/accept_time"
-                android:orientation="horizontal"
-                android:layout_marginTop="50dp"
-                android:id="@+id/accept_id">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
 
                 <TextView
                     android:id="@+id/grp_id_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
                     android:text="Group Id"
                     android:textColor="@color/white"
-                    android:layout_marginLeft="60dp"
-                    android:visibility="invisible"
-                    />
+                    android:visibility="invisible" />
 
                 <EditText
                     android:id="@+id/grp_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:hint="Your Id"
-                    android:textColorHint="@color/white"
-                    android:textColor="@color/white"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="30dp"
-                    android:visibility="invisible"
-                    />
+                    android:ems="10"
+                    android:hint="Your Id"
+                    android:inputType="number"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:visibility="invisible" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/proceed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Proceed"
-                android:backgroundTint="@color/sky"
-                android:textColor="@color/white"
                 android:layout_below="@id/accept_id"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:visibility="invisible"
-                />
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/sky"
+                android:text="Proceed"
+                android:textColor="@color/white"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/tmp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/proceed"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="100dp"
+                android:text="Proceed"
+                android:visibility="invisible" />
         </LinearLayout>
 
     </ScrollView>

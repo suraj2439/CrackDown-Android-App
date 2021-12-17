@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class ActivityMenu extends AppCompatActivity {
     String groupId = "Undefine";
     LoadProgressBar progressBar;
+    static final String TMP_GRP_ID = "99999";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +33,14 @@ public class ActivityMenu extends AppCompatActivity {
         groupId = extra.getString("groupId");
         int action = extra.getInt("action");
 
-        if(action == 0)
-            getSupportFragmentManager().beginTransaction().replace(R.id.group_container, new GroupInfo()).commit();
-        /*
+        if(action == 0) {
+            if(groupId.equals(TMP_GRP_ID)) {
+                Toast.makeText(getApplicationContext(), "Oops! you are in whatsapp only mode", Toast.LENGTH_LONG).show();
+                return;
+            }
+            else getSupportFragmentManager().beginTransaction().replace(R.id.group_container, new GroupInfo()).commit();
+        }
+            /*
         else if(action == 1) {
             //website
             FirebaseFirestore DB = FirebaseFirestore.getInstance();
