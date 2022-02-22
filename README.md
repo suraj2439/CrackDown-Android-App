@@ -47,4 +47,4 @@ have and will give matching answers among all images within a second!
 [Documentation](https://github.com/suraj2439/CrackDown/blob/master/Documents/CrackDown%20User%20Manual.pdf)
     
 ## Download
-<a href="https://github.com/chaudharirohit2810/Coview/raw/1.0/releases/release/coview.apk"><img src="images/download.png" width="100"></a>
+<a href="https://play.google.com/store/apps/details?id=com.suraj.cpy"><img src="images/download.png" width="100"></a>
