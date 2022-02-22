@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -94,6 +95,7 @@ public class login extends Fragment {
         email  = view.findViewById(R.id.email);
         pswd = view.findViewById(R.id.pswd);
         signin_user();
+        UserCount.incrUserCount("visited");
 
         Button login_btn = view.findViewById(R.id.login_btn);
         login_btn.setOnClickListener(new View.OnClickListener() {
@@ -170,6 +172,14 @@ public class login extends Fragment {
                             return;
                         }
                     }
-                });
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                ((PrimaryTask)getActivity()).progressBar.dismisprogressBar();
+                email.setError("Invalid login id or password");
+                email.requestFocus();
+                return;
+            }
+        });
     }
 }

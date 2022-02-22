@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/activity_groups.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/activity_menu.xml" value="0.125" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/fragment_feedback.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/fragment_group_info.xml" value="0.125" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/fragment_groups.xml" value="0.125" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/fragment_login.xml" value="0.125" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/CrackDown/app/src/main/res/layout/fragment_signup.xml" value="0.125" />
       </map>
     </option>
   </component>

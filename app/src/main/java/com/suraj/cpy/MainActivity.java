@@ -36,7 +36,6 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         if (mInterstitialAd != null) {
-            mInterstitialAd.show(this);
+            //mInterstitialAd.show(this);
         }
     }
 
@@ -168,12 +167,13 @@ public class MainActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
 
-        mAdView = findViewById(R.id.adBanner);
+        //mAdView = findViewById(R.id.adBanner);
+        mAdView= null;
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        //mAdView.loadAd(adRequest);
 
-        load_banner_ad(mAdView, adRequest);
-        load_interstitialAd();
+        //load_banner_ad(mAdView, adRequest);
+        //load_interstitialAd();
 
         handle_permissions();
 
@@ -735,7 +735,7 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mAdView.loadAd(adRequest);
+                        //mAdView.loadAd(adRequest);
                     }
                 }, 1000);
             }

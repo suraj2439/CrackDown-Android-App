@@ -156,7 +156,7 @@ public class groups extends Fragment {
                     ((PrimaryTask)getActivity()).editor.commit();
                 }
                 else if(((PrimaryTask)getActivity()).mInterstitialAd != null) {
-                    ((PrimaryTask)getActivity()).mInterstitialAd.show((PrimaryTask)getActivity());
+                    //((PrimaryTask)getActivity()).mInterstitialAd.show((PrimaryTask)getActivity());
                 }
 
                 click_event = CREATE_GRP_EVENT;
@@ -207,7 +207,7 @@ public class groups extends Fragment {
                     ((PrimaryTask)getActivity()).editor.commit();
                 }
                 else if(((PrimaryTask)getActivity()).mInterstitialAd != null) {
-                    ((PrimaryTask)getActivity()).mInterstitialAd.show((PrimaryTask)getActivity());
+                    //((PrimaryTask)getActivity()).mInterstitialAd.show((PrimaryTask)getActivity());
                 }
 
                 click_event = JOIN_GRP_EVENT;
@@ -246,6 +246,7 @@ public class groups extends Fragment {
                 Intent mainActivity = new Intent(getActivity(), MainActivity.class);
                 mainActivity.putExtra("waTime", time);
                 if(click_event == JOIN_GRP_EVENT) {
+                    UserCount.incrUserCount("joinGroup");
                     String groupId = grpId.getText().toString();
 
                     if(groupId.isEmpty()) {
@@ -295,6 +296,7 @@ public class groups extends Fragment {
                     });
                 }
                 else if(click_event == CREATE_GRP_EVENT) {
+                    UserCount.incrUserCount("createGroup");
                     ((PrimaryTask) getActivity()).progressBar.dismisprogressBar();
                     mainActivity.putExtra("wa_feature", is_wa_enabled);
                     mainActivity.putExtra("senderName", senderName);
@@ -304,6 +306,7 @@ public class groups extends Fragment {
                     startActivity(mainActivity);
                 }
                 else if(click_event == WA_MODE_EVENT) {
+                    UserCount.incrUserCount("whatsappOnly");
                     ((PrimaryTask)getActivity()).progressBar.dismisprogressBar();
                     mainActivity.putExtra("wa_feature", is_wa_enabled);
                     mainActivity.putExtra("senderName", "Undefined");
@@ -334,7 +337,7 @@ public class groups extends Fragment {
                     ((PrimaryTask)getActivity()).editor.commit();
                 }
                 else if(((PrimaryTask)getActivity()).mInterstitialAd != null) {
-                    ((PrimaryTask)getActivity()).mInterstitialAd.show((PrimaryTask)getActivity());
+                    //((PrimaryTask)getActivity()).mInterstitialAd.show((PrimaryTask)getActivity());
                 }
 
                 click_event = WA_MODE_EVENT;

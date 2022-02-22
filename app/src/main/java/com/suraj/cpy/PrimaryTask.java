@@ -50,7 +50,7 @@ public class PrimaryTask extends AppCompatActivity {
         else
             super.onBackPressed();
         if (mInterstitialAd != null) {
-            mInterstitialAd.show(this);
+            //mInterstitialAd.show(this);
         }
     }
 
@@ -75,8 +75,8 @@ public class PrimaryTask extends AppCompatActivity {
             }
         });
 
-        load_interstitialAd();
-        load_bannerAd();
+        //load_interstitialAd();
+        //load_bannerAd();
 
         /*
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -179,7 +179,8 @@ public class PrimaryTask extends AppCompatActivity {
     }
 
     private void load_bannerAd() {
-        mAdView = findViewById(R.id.bannerAd);
+        //mAdView = findViewById(R.id.bannerAd);
+        mAdView = null;
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 

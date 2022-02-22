@@ -81,6 +81,7 @@ public class signup extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
+        UserCount.incrUserCount("signup");
 
         auth = FirebaseAuth.getInstance();
 
